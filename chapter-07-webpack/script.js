@@ -1,5 +1,3 @@
-// NEW CHAPTER 05
-
 const getFormData = () => {
   // Get each individual form input
   const newJobTitle = document.querySelector("#job-form-title");
@@ -102,5 +100,3 @@ const jobs = getJobs();
 jobs.forEach((job) => {
   createNewPost(job);
 });
-
-// END: NEW CHAPTER 05

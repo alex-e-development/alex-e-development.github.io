@@ -1,0 +1,52 @@
+/* Global */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* App */
+.app {
+  max-width: 1024px;
+}
+
+.app-title {
+  font-size: 48px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+form > input,
+form > textarea {
+  margin-bottom: 16px;
+}
+
+form > button {
+  width: 100px;
+}
+
+.app-footer {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* Jobs */
+.jobs {
+  padding: 0 12px;
+}
+
+.jobs > article {
+  margin: 32px 0;
+}
