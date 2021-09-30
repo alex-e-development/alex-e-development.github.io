@@ -1,0 +1,11 @@
+{
+  "name": "chapter-07-webpack",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "lodash": "^4.17.21",
+    "webpack": "^5.55.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

@@ -6,7 +6,9 @@ const getFormData = () => {
 
   // Create a new object with the value of each form field
   const newJob = {
-    title: newJobTitle.value,
+    // NEW CHAPTER 06
+    title: _.startCase(newJobTitle.value),
+    // END: NEW CHAPTER 06
     summary: newJobSummary.value,
     contactEmail: newJobContactEmail.value,
   };

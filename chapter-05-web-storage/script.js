@@ -81,7 +81,7 @@ const formSubmit = () => {
   const newJob = getFormData();
 
   // Save the new job in localStorage
-  saveNewJob(newJob);
+  saveNewJob(newJob); // <-- NEW
 
   // Create a new job listing with the form data
   createNewPost(newJob);
