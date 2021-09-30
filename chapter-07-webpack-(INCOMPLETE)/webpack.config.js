@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
@@ -20,7 +20,7 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.m?[jt]s$/,
+        test: /\.m?[jt]sx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
@@ -28,12 +28,12 @@ module.exports = {
             presets: [
               "@babel/preset-env",
               // "@babel/preset-typescript"
+              ["@babel/preset-react", { runtime: "automatic" }],
             ],
           },
         },
       },
-      { test: /\.ts$/, use: "ts-loader" },
-
+      { test: /\.tsx?$/, use: "ts-loader" },
     ],
   },
   plugins: [
@@ -44,7 +44,8 @@ module.exports = {
     }),
   ],
   optimization: {
-    // usedExports: false,
+    usedExports: true,
     minimize: false,
+    innerGraph: true,
   },
 };
