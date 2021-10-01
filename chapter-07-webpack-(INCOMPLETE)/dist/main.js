@@ -594,6 +594,14 @@ if (true) {
 "use strict";
 module.exports = __webpack_require__.p + "596ebb36e6e8fdfd94c8.jpg";
 
+/***/ }),
+
+/***/ 663:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "7a7fcda2e90aae763948.png";
+
 /***/ })
 
 /******/ 	});
@@ -682,6 +690,8 @@ var join_1 = __importDefault(__webpack_require__(611));
 
 var sample_jpg_1 = __importDefault(__webpack_require__(632));
 
+var speed_png_1 = __importDefault(__webpack_require__(663));
+
 var react_dom_1 = __importDefault(__webpack_require__(935));
 
 function component() {
@@ -703,6 +713,8 @@ var F = function () {
       children: "HELLO LOOK AT THIS"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
       src: sample_jpg_1.default
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+      src: speed_png_1.default
     })]
   });
 };

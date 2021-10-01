@@ -1,5 +1,6 @@
 import join from "lodash/join";
 import fff from "./sample.jpg";
+import asdasdas from "./speed.png";
 
 import ReactDOM from "react-dom";
 
@@ -25,8 +26,8 @@ const F = () => (
   <>
     <h1>HELLO LOOK AT THIS</h1>
     <img src={fff} />
+    <img src={asdasdas} />
   </>
 );
 
 ReactDOM.render(<F />, document.getElementById('appppp'));
-
