@@ -19,7 +19,6 @@ So to begin we will create our first React element. Let's start by loading our l
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Modern Development Stack Tutorial</title>
     <script src="node_modules/react/umd/react.development.js"></script>
     <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
     <script src="script.js" defer></script>
