@@ -1,22 +1,15 @@
-const LikeButton = () => {
-    let [liked, setLiked] = React.useState(false);
-  
-    if (liked) {
-      return React.createElement("h1", null, "Liked!");
-    }
-  
-    return React.createElement(
-      "button",
-      {
-        className: "like-button",
-        onClick: () => {
-          setLiked(true);
-        },
-      },
-      "Click to like!"
-    );
-  };
-  
-  const domContainer = document.querySelector("#app");
-  
-  ReactDOM.render(React.createElement(LikeButton), domContainer);
+const x = 5;
+
+let y = 6;
+
+const sampleFunction = () => "some return value";
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const hasThree = [1, 2, 3].includes(3);
+console.log(hasThree);

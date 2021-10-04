@@ -54,7 +54,8 @@ class Person {
   }
 }
 
-[1, 2, 3].includes(3);
+const hasThree = [1, 2, 3].includes(3);
+console.log(hasThree);
 ```
 
 At its most basic configuration `babel` will transform your [ES6](https://www.w3schools.com/js/js_es6.asp) syntax into the much wider supported [ES5](https://www.w3schools.com/js/js_es5.asp).
