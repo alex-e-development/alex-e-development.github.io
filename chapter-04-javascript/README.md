@@ -138,7 +138,7 @@ If any of your values show `null` there are two likely reasons:
 
 - You missed the `defer` attribute on the `<script>` tag. What that does is wait to run your Javascript file until after the HTML is loaded. This is necessary otherwise your `querySelector` functions won't find anything because they are in the `<head>` tag and run before the `<form>` is created
 
-- You may have a mismatch on your selector either with the identifier (check for a missing period on class selectors), or just the spelling. Double check to make sure that you you are calling `document.querySelector("#job-form-title")` in your JS, that you actually have an element with an `id` of `job-form-title` in your `index.html` file.
+- You may have a mismatch on your selector either with the identifier (check for a missing period on class selectors), or just the spelling. Double check to make sure that you are calling `document.querySelector("#job-form-title")` in your JS, that you actually have an element with an `id` of `job-form-title` in your `index.html` file.
 
 Now that we have that working, let's move to the net piece. Remove the `console.log` statement and add:
 
@@ -241,12 +241,15 @@ The last step is to attach our function to the button so that it only runs when 
 
 Normally with a standard function it would only be necessary to write the name of our function `formSubmit`, however the [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return) here is necessary in order to cancel the browser's default refresh behavior.  
 
-Intersting note is that since we no control when this code is run manually, the `defer` attribute is no longer required on our `<script>` tag.  It's harmless to leave it there however for now.
+'// not sure what how the below 'interesting note' should read //'
+
+Interesting note is that since we have control when this code is run manually, the `defer` attribute is no longer required on our `<script>` tag.  It's harmless to leave it there, however.
 
 ## Wrapping up
 
-Although our app will look the same visually as the end of Chapter 03, if all has gone well we now have the ability to create new job postings with custom content.  Give it a try!  Here's a screenshot of the current state of the app with two custom posts created and automatically appended with our new JS function:
+Although our app will look the same as it did at the end of Chapter 03, if all has gone well we now have the ability to create new job postings with custom content.  Give it a try!  Here's a screenshot of the current state of the app with two custom posts created and automatically appended with our new JS function:
 
 ![Chapter 04 Final Screenshot](images/chapter-04-final.jpg)
 
+' // is web storage/client-side storage considered part of the backend? Maybe that is chapter 10?// '
 At this point we have completed all the requirements as written for the frontend.  It's time to move to the backend!
