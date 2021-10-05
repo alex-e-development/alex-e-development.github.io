@@ -10,13 +10,13 @@ This tutorial operates under the presumption that you already have enough famili
 
 ### General Reference
 
-There is no better general reference for the entire Javascript language than [javascript.info](https://javascript.info/). If you need a quick refresher on anything this should always be your first stop. It's an incredible resource and compleely free.
+There is no better general reference for the entire Javascript language than [javascript.info](https://javascript.info/). If you need a quick refresher on anything this should always be your first stop. It's an incredible resource and completely free.
 
 ### Teaching Resources
 
-Althoguh I haven't used it myself, I've heard plenty of good things about the recources at [Free Code Camp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript) which are exactly as free as they sound.
+Although I haven't used it myself, I've heard plenty of good things about the resources at [Free Code Camp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript) which are exactly as free as they sound.
 
-Personally my first introdution to Javascript was Douglas Crockford's [Javascript: the Good Parts](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/) which is the subject of some funny and not entirely inaccurate [memes](https://i.redd.it/h7nt4keyd7oy.jpg). It's a relatively quick read that covers the the language really well, and even though it tends to skew a bit toward older syntax, the basic structure and fundamentals of the language that it teaches haven't changed.
+Personally my first introduction to Javascript was Douglas Crockford's [Javascript: the Good Parts](https://www.oreilly.com/library/view/javascript-the-good/9780596517748/), which is the subject of some funny and not entirely inaccurate [memes](https://i.redd.it/h7nt4keyd7oy.jpg). It's a relatively quick read that covers the the language really well, and even though it tends to skew a bit toward older syntax, the basic structure and fundamentals of the language that it teaches haven't changed.
 
 ### Advanced Resources
 
@@ -95,7 +95,7 @@ In previous chapters I stressed the importance of learning [CSS Selectors](https
 We'll begin by querying the form itself, as well as each of the individual inputs inside. The reason we need both are:
 
 - We need a reference to the inputs so that we can read the information the employer entered about the job
-- We need a reference to the form so that we can reset it when we're done, and employers can add another job without having to manually clear the fields
+- We need a reference to the form so that we can reset it when we're done, and so employers can add another job without having to manually clear the fields
 
 To accomplish this we will use `document.querySelector` which uses CSS Selectors to target [DOM nodes](https://developer.mozilla.org/en-US/docs/Web/API/Node). If you're not already familiar with the [DOM](https://developer.mozilla.org/en-US/docs/Glossary/DOM) you should check out these links. Mostly simply put HTML is the blueprint for how to make a site, and the DOM is the browser's actual interpretation of it. Think of it as instructions (HTML) vs construction (DOM). A DOM Node is a piece of a site/app that can be created/updated/removed at any time.
 
@@ -129,6 +129,7 @@ console.log(jobForm, newJobTitle, newJobSummary, newJobContactEmail);
 
 Save and load your app. The output inside the dev console should look something like this (may depending on the browser, this example is Firefox, relevant part shown with red arrow):
 
+'// There is no red arrow in the screenshot below //'
 ![Console Log Dom Nodes](images/chapter-04-console-log.jpg)
 
 This is the exact output we're looking for. The `jobForm` variable holds that `<form>` while the other three all hold references to their respective input nodes.
@@ -137,7 +138,7 @@ If any of your values show `null` there are two likely reasons:
 
 - You missed the `defer` attribute on the `<script>` tag. What that does is wait to run your Javascript file until after the HTML is loaded. This is necessary otherwise your `querySelector` functions won't find anything because they are in the `<head>` tag and run before the `<form>` is created
 
-- You may have a mismatch on your selector either with the identifier (check for a missing period on class selectors) or just the spelling. Double check to make sure that you you are calling `document.querySelector("#job-form-title")` in your JS, that you actually have an element with an `id` of `job-form-title` in your `index.html` file.
+- You may have a mismatch on your selector either with the identifier (check for a missing period on class selectors), or just the spelling. Double check to make sure that you you are calling `document.querySelector("#job-form-title")` in your JS, that you actually have an element with an `id` of `job-form-title` in your `index.html` file.
 
 Now that we have that working, let's move to the net piece. Remove the `console.log` statement and add:
 
@@ -152,7 +153,7 @@ const clonedJobPost = existingJobPost.cloneNode(true);
 // ...
 ```
 
-Here we grab a reference to one of our existing `job-post` articles (doesn't matter whcih one, `querySelector` will return the first result it finds) and then we clone it. We do this to create an exact copy of the DOM structure (based on our HTML template) so we can just update the text values and not have to re-write the whole template.
+Here we grab a reference to one of our existing `job-post` articles (doesn't matter which one, `querySelector` will return the first result it finds) and then we clone it. We do this to create an exact copy of the DOM structure (based on our HTML template) so we can just update the text values and not have to re-write the whole template.
 
 Use `console.log` to confirm that your `existingJobPost` and `clonedJobPost` variables are defined.
 
