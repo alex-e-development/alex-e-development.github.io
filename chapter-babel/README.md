@@ -1,6 +1,6 @@
-# Babel
+# Building the Modern Web Stack: Babel
 
-## What purpose does it serve?
+## What is Babel?
 
 Babel is a tool that lets you write your Javascript code using all the latest syntax and features, and still run it in older browsers. Babel is a [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) that will translate your modern JS code into an older version of Javscript that more browsers are able to understand.
 
@@ -227,7 +227,7 @@ To test it out let's load the entirety of the `core-js` library into our app. Si
 </html>
 ```
 
-We'll begin by trying to load the file in IE11. If your machine doesn't have Internet Explorer 11, you can simply follow with the example here. This example is running on `Windows 11` which has removed IE11 entirely.  Fortunately `Microsoft Edge` comes with an [IE 11 Mode](https://docs.microsoft.com/en-us/deployedge/edge-ie-mode) for testing applicaitons that require backward compatibility.
+We'll begin by trying to load the file in IE11. If your machine doesn't have Internet Explorer 11, you can simply follow with the example here. This example is running on `Windows 11` which has removed IE11 entirely.  Fortunately `Microsoft Edge` comes with an [IE 11 Mode](https://docs.microsoft.com/en-us/deployedge/edge-ie-mode) for testing applications that require backward compatibility.
 
 When we run Babel and try to load our `script-transformed.js` file in IE11 we get the following error on the console:
 

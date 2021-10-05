@@ -1,32 +1,31 @@
+"use strict";
+
 const LikeButton = () => {
   let [liked, setLiked] = React.useState(false);
 
   if (liked) {
-    return React.createElement("h1", null, "Liked!");
+    // return React.createElement("span", null, "Liked! 👍");
+    return /*#__PURE__*/React.createElement("span", null, "Liked! \uD83D\uDC4D");
   }
 
-  return React.createElement(
-    "button",
-    {
-      className: "like-button",
-      onClick: () => {
-        setLiked(true);
-      },
-    },
-    "Click to like!"
-  );
+  return /*#__PURE__*/React.createElement("button", {
+    className: "like-button",
+    onClick: () => {
+      setLiked(true);
+    }
+  }, "Click to like!");
 };
 
 const domContainer = document.querySelector("#app");
 
-const manyButtons = React.createElement(
-  "div",
-  null,
-  React.createElement(LikeButton),
-  React.createElement(LikeButton),
-  React.createElement(LikeButton),
-  React.createElement(LikeButton),
-  React.createElement(LikeButton)
-);
+const ManyButtons = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: "100px",
+      display: "flex",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/React.createElement(LikeButton, null), /*#__PURE__*/React.createElement(LikeButton, null), /*#__PURE__*/React.createElement(LikeButton, null), /*#__PURE__*/React.createElement(LikeButton, null), /*#__PURE__*/React.createElement(LikeButton, null));
+};
 
-ReactDOM.render(manyButtons, domContainer);
+ReactDOM.render( /*#__PURE__*/React.createElement(ManyButtons, null), domContainer);
