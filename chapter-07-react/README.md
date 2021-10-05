@@ -14,16 +14,20 @@ npm --version
 > 7.16.0
 ```
 
-You will need a solid understanding of [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  A non-exhaustive list of some examples of common Javascript features you encounter frequently when using React are:
+You will need a solid understanding of [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).  
+
+Not only do you need to have a good grasp on the fundamentals (strings, numbers, arrays, objects, functions), but there are a number of other Javascript patterns that appear frequently in React codebases.  Here is a non-exhaustive list of some of the ones that come up frequently:
+
 - [Destructuring assignment](https://javascript.info/destructuring-assignment)
 - [Arrow functions](https://javascript.info/arrow-functions-basics)
 - [Conditional (ternary) operator](https://javascript.info/ifelse#conditional-operator)
 - [Class syntax](https://javascript.info/class)
+- [Template strings](https://javascript.info/string#quotes)
 - [Mouse events](https://javascript.info/mouse-events-basics)
 
-If you are unfamiliar with any of the above then it would be worth your time to work your way through the fundamentals sections of [javascript.info](https://javascript.info/).
+You will want to ensure you understand what each of these are before you begin your React journey, that way you can focus all your attention on React patterns rather than on Javascript itself.  If you are unfamiliar with any of the above then it would be worth your time to work your way through the fundamentals sections of [javascript.info](https://javascript.info/).
 
-You will also need to have a good understanding of what the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) is.  In particular, DOM methods like [Document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector).  Although one of the main purposes of React is to provide an environment where we don't need these methods at all, understanding them will give you a significant leg up in understanding why React was created and what problems it solves.
+You will also want to have a good understanding of what the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) is.  In particular, DOM methods like [Document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector).  Although one of the main purposes of React is to provide an environment where we don't need these methods at all, understanding them will give you a significant leg up in understanding why React was created and what problems it solves.
 
 ## Initializing the Project
 
@@ -45,10 +49,10 @@ npm install react react-dom
 
 Let's take a look at what each one is doing:
 
-- `react` serves as the core engine that manages all the component states and rendering.
-- `react-dom` is what allows it to do its work on our DOM elements in our web application. The reason they are separate is that gives React the flexibility to work on other environments beyond just the web browser.  Another environment besides the DOM where React can operate is on mobile devices through [React Native](https://reactnative.dev/).
+- `react` serves as the core engine that manages all the components and their states.
+- `react-dom` is what allows it to do its work on our DOM elements in our web application. The reason they are separate is that gives React the flexibility to work on other environments beyond just the web browser.  Another environment besides the DOM where React can operate is on mobile devices through [React Native](https://reactnative.dev/) for example.
 
-So to begin we will create our first React element. Let's start by loading our library from `node_modules`. Presuming that `index.html` and `node_modules` are in the same directory:
+So to begin, we will create our first React element. Let's start by loading our library from `node_modules`. Presuming that `index.html` and `node_modules` are in the same directory:
 
 `index.html`
 
@@ -115,11 +119,11 @@ Give it a try now and serve up your `index.html` and take a look at the output. 
 
 Although this tutorial focuses on the more modern method of creating [components as functions](https://reactjs.org/docs/components-and-props.html), it is important to make sure you are also familiar with the older style of creating [components as classes](https://reactjs.org/docs/react-component.html).
 
-Class components are still fully supported in React and you're still very likely to encounter them in real codebases and projects, so understanding how they work is very important. For most users, particularly those just learning React, there is no difference. For more advance users there are a very small subset of scenarios where class components are still required (e.g. [error boundaries](https://reactjs.org/docs/error-boundaries.html)).
+Class components are still fully supported in React and you're still very likely to encounter them in real codebases and projects, so understanding how they work is important. For most users, particularly those just learning React, there is no difference. For more advance users there are a small subset of scenarios where class components are still required (e.g. [error boundaries](https://reactjs.org/docs/error-boundaries.html)).
 
 Most new features in React are designed around functional components (e.g. [hooks](https://reactjs.org/docs/hooks-intro.html)) so for new projects and people learning the library, functional components are recommended. In practice the best choice is to follow whatever convention your team has established.
 
-If you're curious, here's how our `LikeButton` component would look using `class` syntax.  A little bit more verbose, but accomplishes the same behavior:
+If you're curious, here's how our `LikeButton` component would look using `class` syntax.  You do not need to update your code as this is only for demonstration.  A little bit more verbose, but accomplishes the same behavior:
 
 ```js
 class LikeButton extends React.Component {
@@ -158,7 +162,7 @@ You may have noticed that despite saying "click to like", our button doesn't act
 
 If were were using plain old Javascript that would require us to use a lot of manual DOM methods, including `querySelector` to select all the nodes we are working with, as well as `createElement` to create our new `<span>` and `appendChild` to add it as a child to our `#app` node.
 
-Let's see how to accomplish the same thing using React, without the need for any DOM methods. We'll do this in a two step process to help understand the concept of [state](https://reactjs.org/docs/state-and-lifecycle.html) in a component.
+Let's see how to accomplish the same thing using React, without the need for any DOM methods. We'll do this in a two-step process to help understand the concept of [state](https://reactjs.org/docs/state-and-lifecycle.html) in a component.
 
 Replace the content of `script.js` with the new code below:
 
@@ -196,7 +200,7 @@ You can see that the initial state of our `LikeButton` component is that `liked`
 
 You can confirm the `onClick` handler is running by viewing the dev console and seeing out "button was clicked" message. Unfortunately despite being logically sound, the state of the button doesn't change.
 
-Although we confirm that we are changing the value of `liked` -- our issue is that there is nothing telling React to update the component and run the function again.  
+Although we confirm that we are changing the value of `liked`, our issue is that there is nothing specifically telling React _"hey, our component has changed, can you please render it again and update the DOM for us with the new state?"_
 
 What we have to do is introduce a method to inform React about the changing [state](https://reactjs.org/docs/state-and-lifecycle.html) of our component. We can do that with the [setState](https://reactjs.org/docs/hooks-state.html) hook.
 
@@ -276,9 +280,9 @@ ReactDOM.render(manyButtons, domContainer);
 
 This same basic paradigm can be extended as far as you can imagine to creater larger and more complex components, each with or without their own state, and with children that also manage their own state.  Combined together you can create a fully reactive application.
 
-## JSX
-
 At this stage is when you start to see how the `React.createElement` syntax can begin to feel pretty cumbersome.  That's where [JSX](https://reactjs.org/docs/introducing-jsx.html) comes into play.
+
+## JSX
 
 In this section we'll learn what JSX is and how to configure your environment to write your React components in JSX.  
 
