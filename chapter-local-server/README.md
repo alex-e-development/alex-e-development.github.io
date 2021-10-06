@@ -1,4 +1,4 @@
-# Understanding the Modern Web Stack: Local Web Server
+# Understanding the Modern Web Stack: Running a Local Web Server
 
 No matter what kind of project you're working on, whether it be a single HTML file, or a large scale application, you always want to be able to spin up an environment where you can quickly test your work on your own machine.
 
@@ -6,7 +6,7 @@ Many tools these days including [webpack](https://webpack.js.org/) and [create-r
 
 Be aware this tutorial is not about writing your own web server (we'll address that topic in a future tutorial on `Node.js` and `Express`).  Right now we're only examining the fundamentals of what a web server is, and the simplest way to get an existing one up and running.
 
-## What is a Web Server
+## What is a Web Server?
 
 Strictly speaking there's nothing specifically different about a "local" web server and a traditional web server.  The _local_ qualifier simply refers to be being run on the same machine you are building your site or application on.  A production web server is obviously going to need to include a lot more features to handle things like traffic volume and security, but fortunately we don't need to worry about things like that when serving our files locally.  All we need to worry about is getting our project to display in our browser.  
 
@@ -44,7 +44,7 @@ If you don't already have one you can either use the below template, or if you a
 </html>
 ```
 
-### Option 1 (Recommended): Live Server VS Code Extension
+### Option 1 (Recommended): Live Server Extension (VS Code)
 
 If you are using VS Code the easiest way is going to be installing the `Live Server` extension (extension id `ritwickdey.liveserver`). Simply install the extension and a `Go Live` icon will appear on the blue bar at the lower right corner of VS Code.
 
@@ -54,7 +54,7 @@ Aftering clicking it you will be able to view your web page at whatever port the
 
 If you have any difficulty you can refer to the full documentation [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-### Option 2: Node web server
+### Option 2: Node Web Server
 
 If you have [Node.js](https://nodejs.org/en/download/) installed already on your machine (you will need it for other tutorials in this series) then you will automatically have `npx` package runner installed as well (don't confuse `npx` with `npm` they are two different commands).
 
@@ -66,12 +66,12 @@ npx http-server -p 8000
 
 It will prompt you to install `http-server` (if it is not installed already). Afterward you can access your web page at [http://localhost:8000]()
 
-### Option 3: Python3 web server
+### Option 3: Python3 Web Server
 
-If you are on Ubuntu or any machine that has Python 3 installed, then you can run a simple webserver with the following command:
+If you are on a machine with Python 3 installed, then you can run a simple webserver with the following command:
 
 ```bash
-sudo python3 -m http.server 8000
+python3 -m http.server 8000
 ```
 
 Then access your web page at [http://localhost:8000]()
@@ -87,6 +87,8 @@ php -S localhost:8000
 
 It will serve your HTML and Javascript the same as any other server, but as a nice bonus you can also include some [PHP](https://www.php.net/manual/en/intro-whatis.php) code in your `index.html` if you so choose (it's not necessary though).
 
+Access your web page at [http://localhost:8000]()
+
 ## Viewing Your Web Page
 
 Whichever option you choose, if you used the default HTML template from the previous section your result should be the same:
@@ -100,3 +102,6 @@ Now that you have the ability to view your files on a live server, you have all 
 Though you may use more advanced tools as your stack expands, ultimately regardless of complexity you will always be able to fallback on any of these simple web servers to host the entry point of your application.
 
 Thanks for reading!  Stay tuned for more tutorials in the _Understanding the Modern Web Stack_ series.
+
+- [Understanding the Modern Web Stack: Running a Local Web Server](https://dev.to/alexeagleson/understanding-the-modern-web-stack-running-a-local-web-server-4d8g)
+- [Understanding the Modern Web Stack: Babel](https://dev.to/alexeagleson/building-a-modern-web-stack-babel-3hfp)

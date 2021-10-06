@@ -10,7 +10,7 @@
     "@babel/preset-react": "^7.14.5"
   },
   "browserslist": [
-    "last 2 Chrome versions"
+    "last 2 Chrome versions", "IE 11"
   ],
   "babel": {
     "presets": [

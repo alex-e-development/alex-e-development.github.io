@@ -2,7 +2,7 @@
 
 ## What is Babel?
 
-Babel is a tool that lets you write your Javascript code using all the latest syntax and features, and still run it in older browsers. Babel is a [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) that will translate your modern JS code into an older version of Javscript that more browsers are able to understand.
+Babel is a tool that lets you write your Javascript code using all the latest syntax and features, and run it in browsers that may not support those features. Babel is a [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) that will translate your modern JS code into an older version of Javscript that more browsers are able to understand.
 
 Babel is often built into the tools that we use every day to built modern web applications (like [create-react-app](https://github.com/facebook/create-react-app) for example) so many developers don't have a full understanding of what the tool actually does. This tutorial is designed to set up a Babel configuration piece by piece and is part of a larger tutorial series in setting up your own custom development environment.
 
@@ -10,7 +10,7 @@ Babel is often built into the tools that we use every day to built modern web ap
 
 You will need to have [Node.js](https://nodejs.org/en/download/) installed on your machine and available from your terminal. Installing Node will automatically install [npm](<https://en.wikipedia.org/wiki/Npm_(software)>) as well, which is what you will use to install Babel.
 
-If you see version numbers when running the two commands below (your numbers will likely be different than this example) then you are ready to go:
+Open up your terminal of choice.  If you see version numbers when running the two commands below (your numbers will likely be different than this example) then you are ready to go:
 
 ```bash
 node --version
@@ -227,6 +227,8 @@ To test it out let's load the entirety of the `core-js` library into our app. Si
 </html>
 ```
 
+_(If you aren't sure how to serve this file run and view the output [check out this tutorial](https://dev.to/alexeagleson/understanding-the-modern-web-stack-running-a-local-web-server-4d8g) first)_
+
 We'll begin by trying to load the file in IE11. If your machine doesn't have Internet Explorer 11, you can simply follow with the example here. This example is running on `Windows 11` which has removed IE11 entirely.  Fortunately `Microsoft Edge` comes with an [IE 11 Mode](https://docs.microsoft.com/en-us/deployedge/edge-ie-mode) for testing applications that require backward compatibility.
 
 When we run Babel and try to load our `script-transformed.js` file in IE11 we get the following error on the console:
@@ -255,6 +257,10 @@ It works! We're writing modern Javascript and running it in an old dinosaur brow
 
 ## Wrapping Up
 
-You should now have a fairly solid grasp of the fundamentals of what Babel is, and how it works.  Of course there's a lot more to discover.  In future tutorials we'll go deeper into two more of the major presets that are supported by Babel for transpiling supersets of Javascript: [JSX](https://reactjs.org/docs/introducing-jsx.html) and [Typescript](https://www.typescriptlang.org/).  
+You should now have a solid grasp of the fundamentals of what Babel is, and how it works.  Of course there's a lot more to discover.  In future tutorials we'll go deeper into two more of the major presets that are supported by Babel for transpiling supersets of Javascript: [JSX](https://reactjs.org/docs/introducing-jsx.html) and [Typescript](https://www.typescriptlang.org/).  
 
-Before we do that we'll first go over the fundamentals of each (similar to this introduction) before diving into how to configure them all together into a modern web stack.  Stay tuned.  
+When we start working with `webpack` we will also look at how to configure Babel so that it only imports those functions from the sizable `core-js` library that you are actually using in your application (like `Array.includes()`) so that you don't need to include the entirety of the library itself.
+
+Before we do that however, we'll first go over the fundamentals of each of these tools on their own, after which we'll be ready to see how they combine together to form a complete modern web stack.
+
+Thanks for reading, and stay tuned!
