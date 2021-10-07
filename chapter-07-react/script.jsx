@@ -3,11 +3,12 @@ const LikeButton = () => {
 
   if (liked) {
     // return React.createElement("span", null, "Liked! 👍");
-    return <span>Liked! 👍</span>;
+    return <span style={{ width: "150px", height: "25px" }}>Liked! 👍</span>;
   }
 
   return (
     <button
+      style={{ width: "150px", height: "25px" }}
       className="like-button"
       onClick={() => {
         setLiked(true);
@@ -22,12 +23,10 @@ const domContainer = document.querySelector("#app");
 
 const ManyButtons = () => {
   return (
-    <div style={{ width: "100px", display: "flex", flexDirection: "column" }}>
-      <LikeButton />
-      <LikeButton />
-      <LikeButton />
-      <LikeButton />
-      <LikeButton />
+    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
+      {[...new Array(500)].map((_, index) => (
+        <LikeButton key={index} />
+      ))}
     </div>
   );
 };
